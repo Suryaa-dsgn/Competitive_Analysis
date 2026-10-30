@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-ink: #17223b;
+  --color-body: #3b4660;
+  --color-muted: #66728a;
+  --color-line: #e4e8ef;
+  --color-line-strong: #cfd6e1;
+  --color-canvas: #f8fafc;
+  --color-subtle: #f3f5f9;
+
+  --color-accent: #5847c9;
+  --color-accent-ink: #3e2f9e;
+  --color-accent-soft: #f3f1fd;
+  --color-accent-line: #ddd7f8;
+
+  --color-providertrust: #12877c;
+  --color-symplr: #d0603f;
+  --color-medallion: #3a68d0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Soft surface washes: identifiers, not decoration. Kept at low opacity. */
+@utility wash-providertrust {
+  background-color: #fff;
+  background-image: linear-gradient(135deg, rgb(20 160 145 / 0.09) 0%, rgb(20 160 145 / 0.03) 45%, rgb(255 255 255 / 0) 80%);
+}
+@utility wash-symplr {
+  background-color: #fff;
+  background-image: linear-gradient(135deg, rgb(240 128 90 / 0.1) 0%, rgb(240 128 90 / 0.035) 45%, rgb(255 255 255 / 0) 80%);
+}
+@utility wash-medallion {
+  background-color: #fff;
+  background-image: linear-gradient(135deg, rgb(70 120 230 / 0.09) 0%, rgb(120 100 230 / 0.04) 45%, rgb(255 255 255 / 0) 80%);
+}
+@utility wash-quickflows {
+  background-color: #fff;
+  background-image: linear-gradient(135deg, rgb(98 76 214 / 0.1) 0%, rgb(98 76 214 / 0.04) 50%, rgb(255 255 255 / 0) 90%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@page {
+  size: A4 landscape;
+  margin: 9mm 10mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+    font-size: 12px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
